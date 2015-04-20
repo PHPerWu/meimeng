@@ -22,6 +22,54 @@
     <None Include="res\meimeng.ico">
       <Filter>资源文件</Filter>
     </None>
+    <None Include="res\一键美化.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\伸缩变换.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\bitmap1.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\打开.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\美白.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\磨皮.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\滤镜.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\保存.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\打开0.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\一键美化0.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\美白0.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\磨皮0.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\伸缩变换0.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\滤镜0.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\保存0.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\bitmap8.bmp">
+      <Filter>资源文件</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="meimeng.h">

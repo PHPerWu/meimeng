@@ -51,6 +51,7 @@ BEGIN_MESSAGE_MAP(CmeimengDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_OPEN, &CmeimengDlg::OnBnClickedOpen)
 	ON_BN_CLICKED(IDC_WHITE, &CmeimengDlg::OnBnClickedWhite)
 	ON_BN_CLICKED(IDC_SHARK, &CmeimengDlg::OnBnClickedShark)
+	ON_WM_DRAWITEM()
 END_MESSAGE_MAP()
 
 
@@ -201,4 +202,345 @@ void CmeimengDlg::OnBnClickedShark()
 
 	// TODO: 在此添加控件通知处理程序代码
 	DrawPicToHDC(LFimage, IDC_STATIC_PIC);
+}
+
+
+void CmeimengDlg::OnDrawItem(int nIDCtl, LPDRAWITEMSTRUCT lpDrawItemStruct)
+{
+	
+	//switch(nIDCtl)//判断不同按钮的ID
+	//{
+	//	case 1002:
+			if(1002==nIDCtl)
+			{
+				CDC ButtonDC; 
+				CBitmap bitmapTrans; 
+				BITMAP bmp; 
+				CDC mem; 
+				CRect rc; 
+				//得到用于绘制按钮的DC 
+				ButtonDC.Attach(lpDrawItemStruct->hDC); 
+				//准备用于向按钮区域传输位图 
+				mem.CreateCompatibleDC(&ButtonDC); 
+				//获取按钮所占的矩形大小 
+				rc=lpDrawItemStruct->rcItem; 
+				//获取按钮目前所处的状态，根据不同的状态绘制不同的按钮 
+				UINT state = lpDrawItemStruct->itemState; 
+				//如果按钮已经得到焦点，绘制选中状态下的按钮 
+				if(state&ODS_FOCUS) 
+				{ 
+					bitmapTrans.LoadBitmap(IDB_BITMAP2); 
+					bitmapTrans.GetBitmap(&bmp); 
+					CBitmap *old=mem.SelectObject(&bitmapTrans); 
+					//向按钮所在位置传输位图 
+					//使用StretcnBlt的目的是为了让位图随按钮的大小而改变 
+					ButtonDC.StretchBlt(rc.left,rc.top,rc.right,rc.bottom,&mem,0,0,bmp.bmWidth,bmp.bmHeight,SRCCOPY); 
+					mem.SelectObject(old); 
+					bitmapTrans.DeleteObject(); 
+					//设置文字背景为透明 
+					ButtonDC.SetBkMode(TRANSPARENT); 
+					CString str1("");
+					ButtonDC.DrawText(str1,&rc,DT_CENTER|DT_VCENTER|DT_SINGLELINE); 
+				} 
+				else
+				{ 
+					bitmapTrans.LoadBitmap(IDB_BITMAP12); 
+					CBitmap *old2 = mem.SelectObject(&bitmapTrans); 
+					bitmapTrans.GetBitmap(&bmp); 
+					CBitmap *old=mem.SelectObject(&bitmapTrans); 
+					ButtonDC.StretchBlt(rc.left,rc.top,rc.right,rc.bottom,&mem,0,0,bmp.bmWidth,bmp.bmHeight,SRCCOPY); 
+					ButtonDC.SetBkMode(TRANSPARENT); 
+					CString str2("");
+					ButtonDC.DrawText(str2,&rc,DT_CENTER|DT_VCENTER|DT_SINGLELINE); 
+					mem.SelectObject(old2); 
+					bitmapTrans.DeleteObject(); 
+					CDialog::OnDrawItem(nIDCtl, lpDrawItemStruct);
+				}
+			}//case 1002结束
+
+		/*case 1005:*/
+			else if(1005==nIDCtl)
+			{
+				CDC ButtonDC; 
+				CBitmap bitmapTrans; 
+				BITMAP bmp; 
+				CDC mem; 
+				CRect rc; 
+				//得到用于绘制按钮的DC 
+				ButtonDC.Attach(lpDrawItemStruct->hDC); 
+				//准备用于向按钮区域传输位图 
+				mem.CreateCompatibleDC(&ButtonDC); 
+				//获取按钮所占的矩形大小 
+				rc=lpDrawItemStruct->rcItem; 
+				//获取按钮目前所处的状态，根据不同的状态绘制不同的按钮 
+				UINT state = lpDrawItemStruct->itemState; 
+				//如果按钮已经得到焦点，绘制选中状态下的按钮 
+				if(state&ODS_FOCUS) 
+				{ 
+					bitmapTrans.LoadBitmap(IDB_BITMAP5); 
+					bitmapTrans.GetBitmap(&bmp); 
+					CBitmap *old=mem.SelectObject(&bitmapTrans); 
+					//向按钮所在位置传输位图 
+					//使用StretcnBlt的目的是为了让位图随按钮的大小而改变 
+					ButtonDC.StretchBlt(rc.left,rc.top,rc.right,rc.bottom,&mem,0,0,bmp.bmWidth,bmp.bmHeight,SRCCOPY); 
+					mem.SelectObject(old); 
+					bitmapTrans.DeleteObject(); 
+					//设置文字背景为透明 
+					ButtonDC.SetBkMode(TRANSPARENT); 
+					CString str1("");
+					ButtonDC.DrawText(str1,&rc,DT_CENTER|DT_VCENTER|DT_SINGLELINE); 
+				} 
+				else
+				{ 
+					bitmapTrans.LoadBitmap(IDB_BITMAP15); 
+					CBitmap *old2 = mem.SelectObject(&bitmapTrans); 
+					bitmapTrans.GetBitmap(&bmp); 
+					CBitmap *old=mem.SelectObject(&bitmapTrans); 
+					ButtonDC.StretchBlt(rc.left,rc.top,rc.right,rc.bottom,&mem,0,0,bmp.bmWidth,bmp.bmHeight,SRCCOPY); 
+					ButtonDC.SetBkMode(TRANSPARENT); 
+					CString str2("");
+					ButtonDC.DrawText(str2,&rc,DT_CENTER|DT_VCENTER|DT_SINGLELINE); 
+					mem.SelectObject(old2); 
+					bitmapTrans.DeleteObject(); 
+					CDialog::OnDrawItem(nIDCtl, lpDrawItemStruct);
+				}
+			}//case 1005结束
+
+			else if(1001==nIDCtl)
+			{
+				CDC ButtonDC; 
+				CBitmap bitmapTrans; 
+				BITMAP bmp; 
+				CDC mem; 
+				CRect rc; 
+				//得到用于绘制按钮的DC 
+				ButtonDC.Attach(lpDrawItemStruct->hDC); 
+				//准备用于向按钮区域传输位图 
+				mem.CreateCompatibleDC(&ButtonDC); 
+				//获取按钮所占的矩形大小 
+				rc=lpDrawItemStruct->rcItem; 
+				//获取按钮目前所处的状态，根据不同的状态绘制不同的按钮 
+				UINT state = lpDrawItemStruct->itemState; 
+				//如果按钮已经得到焦点，绘制选中状态下的按钮 
+				if(state&ODS_FOCUS) 
+				{ 
+					bitmapTrans.LoadBitmap(IDB_BITMAP1); 
+					bitmapTrans.GetBitmap(&bmp); 
+					CBitmap *old=mem.SelectObject(&bitmapTrans); 
+					//向按钮所在位置传输位图 
+					//使用StretcnBlt的目的是为了让位图随按钮的大小而改变 
+					ButtonDC.StretchBlt(rc.left,rc.top,rc.right,rc.bottom,&mem,0,0,bmp.bmWidth,bmp.bmHeight,SRCCOPY); 
+					mem.SelectObject(old); 
+					bitmapTrans.DeleteObject(); 
+					//设置文字背景为透明 
+					ButtonDC.SetBkMode(TRANSPARENT); 
+					CString str1("");
+					ButtonDC.DrawText(str1,&rc,DT_CENTER|DT_VCENTER|DT_SINGLELINE); 
+				} 
+				else
+				{ 
+					bitmapTrans.LoadBitmap(IDB_BITMAP11); 
+					CBitmap *old2 = mem.SelectObject(&bitmapTrans); 
+					bitmapTrans.GetBitmap(&bmp); 
+					CBitmap *old=mem.SelectObject(&bitmapTrans); 
+					ButtonDC.StretchBlt(rc.left,rc.top,rc.right,rc.bottom,&mem,0,0,bmp.bmWidth,bmp.bmHeight,SRCCOPY); 
+					ButtonDC.SetBkMode(TRANSPARENT); 
+					CString str2("");
+					ButtonDC.DrawText(str2,&rc,DT_CENTER|DT_VCENTER|DT_SINGLELINE); 
+					mem.SelectObject(old2); 
+					bitmapTrans.DeleteObject(); 
+					CDialog::OnDrawItem(nIDCtl, lpDrawItemStruct);
+				}
+			}//case 1001结束
+			
+			else if(1003==nIDCtl)
+			{
+				CDC ButtonDC; 
+				CBitmap bitmapTrans; 
+				BITMAP bmp; 
+				CDC mem; 
+				CRect rc; 
+				//得到用于绘制按钮的DC 
+				ButtonDC.Attach(lpDrawItemStruct->hDC); 
+				//准备用于向按钮区域传输位图 
+				mem.CreateCompatibleDC(&ButtonDC); 
+				//获取按钮所占的矩形大小 
+				rc=lpDrawItemStruct->rcItem; 
+				//获取按钮目前所处的状态，根据不同的状态绘制不同的按钮 
+				UINT state = lpDrawItemStruct->itemState; 
+				//如果按钮已经得到焦点，绘制选中状态下的按钮 
+				if(state&ODS_FOCUS) 
+				{ 
+					bitmapTrans.LoadBitmap(IDB_BITMAP3); 
+					bitmapTrans.GetBitmap(&bmp); 
+					CBitmap *old=mem.SelectObject(&bitmapTrans); 
+					//向按钮所在位置传输位图 
+					//使用StretcnBlt的目的是为了让位图随按钮的大小而改变 
+					ButtonDC.StretchBlt(rc.left,rc.top,rc.right,rc.bottom,&mem,0,0,bmp.bmWidth,bmp.bmHeight,SRCCOPY); 
+					mem.SelectObject(old); 
+					bitmapTrans.DeleteObject(); 
+					//设置文字背景为透明 
+					ButtonDC.SetBkMode(TRANSPARENT); 
+					CString str1("");
+					ButtonDC.DrawText(str1,&rc,DT_CENTER|DT_VCENTER|DT_SINGLELINE); 
+				} 
+				else
+				{ 
+					bitmapTrans.LoadBitmap(IDB_BITMAP13); 
+					CBitmap *old2 = mem.SelectObject(&bitmapTrans); 
+					bitmapTrans.GetBitmap(&bmp); 
+					CBitmap *old=mem.SelectObject(&bitmapTrans); 
+					ButtonDC.StretchBlt(rc.left,rc.top,rc.right,rc.bottom,&mem,0,0,bmp.bmWidth,bmp.bmHeight,SRCCOPY); 
+					ButtonDC.SetBkMode(TRANSPARENT); 
+					CString str2("");
+					ButtonDC.DrawText(str2,&rc,DT_CENTER|DT_VCENTER|DT_SINGLELINE); 
+					mem.SelectObject(old2); 
+					bitmapTrans.DeleteObject(); 
+					CDialog::OnDrawItem(nIDCtl, lpDrawItemStruct);
+				}
+			}//case 1003结束
+
+			else if(1004==nIDCtl)
+			{
+				CDC ButtonDC; 
+				CBitmap bitmapTrans; 
+				BITMAP bmp; 
+				CDC mem; 
+				CRect rc; 
+				//得到用于绘制按钮的DC 
+				ButtonDC.Attach(lpDrawItemStruct->hDC); 
+				//准备用于向按钮区域传输位图 
+				mem.CreateCompatibleDC(&ButtonDC); 
+				//获取按钮所占的矩形大小 
+				rc=lpDrawItemStruct->rcItem; 
+				//获取按钮目前所处的状态，根据不同的状态绘制不同的按钮 
+				UINT state = lpDrawItemStruct->itemState; 
+				//如果按钮已经得到焦点，绘制选中状态下的按钮 
+				if(state&ODS_FOCUS) 
+				{ 
+					bitmapTrans.LoadBitmap(IDB_BITMAP4); 
+					bitmapTrans.GetBitmap(&bmp); 
+					CBitmap *old=mem.SelectObject(&bitmapTrans); 
+					//向按钮所在位置传输位图 
+					//使用StretcnBlt的目的是为了让位图随按钮的大小而改变 
+					ButtonDC.StretchBlt(rc.left,rc.top,rc.right,rc.bottom,&mem,0,0,bmp.bmWidth,bmp.bmHeight,SRCCOPY); 
+					mem.SelectObject(old); 
+					bitmapTrans.DeleteObject(); 
+					//设置文字背景为透明 
+					ButtonDC.SetBkMode(TRANSPARENT); 
+					CString str1("");
+					ButtonDC.DrawText(str1,&rc,DT_CENTER|DT_VCENTER|DT_SINGLELINE); 
+				} 
+				else
+				{ 
+					bitmapTrans.LoadBitmap(IDB_BITMAP14); 
+					CBitmap *old2 = mem.SelectObject(&bitmapTrans); 
+					bitmapTrans.GetBitmap(&bmp); 
+					CBitmap *old=mem.SelectObject(&bitmapTrans); 
+					ButtonDC.StretchBlt(rc.left,rc.top,rc.right,rc.bottom,&mem,0,0,bmp.bmWidth,bmp.bmHeight,SRCCOPY); 
+					ButtonDC.SetBkMode(TRANSPARENT); 
+					CString str2("");
+					ButtonDC.DrawText(str2,&rc,DT_CENTER|DT_VCENTER|DT_SINGLELINE); 
+					mem.SelectObject(old2); 
+					bitmapTrans.DeleteObject(); 
+					CDialog::OnDrawItem(nIDCtl, lpDrawItemStruct);
+				}
+			}//case 1004结束
+
+			else if(1006==nIDCtl)
+			{
+				CDC ButtonDC; 
+				CBitmap bitmapTrans; 
+				BITMAP bmp; 
+				CDC mem; 
+				CRect rc; 
+				//得到用于绘制按钮的DC 
+				ButtonDC.Attach(lpDrawItemStruct->hDC); 
+				//准备用于向按钮区域传输位图 
+				mem.CreateCompatibleDC(&ButtonDC); 
+				//获取按钮所占的矩形大小 
+				rc=lpDrawItemStruct->rcItem; 
+				//获取按钮目前所处的状态，根据不同的状态绘制不同的按钮 
+				UINT state = lpDrawItemStruct->itemState; 
+				//如果按钮已经得到焦点，绘制选中状态下的按钮 
+				if(state&ODS_FOCUS) 
+				{ 
+					bitmapTrans.LoadBitmap(IDB_BITMAP6); 
+					bitmapTrans.GetBitmap(&bmp); 
+					CBitmap *old=mem.SelectObject(&bitmapTrans); 
+					//向按钮所在位置传输位图 
+					//使用StretcnBlt的目的是为了让位图随按钮的大小而改变 
+					ButtonDC.StretchBlt(rc.left,rc.top,rc.right,rc.bottom,&mem,0,0,bmp.bmWidth,bmp.bmHeight,SRCCOPY); 
+					mem.SelectObject(old); 
+					bitmapTrans.DeleteObject(); 
+					//设置文字背景为透明 
+					ButtonDC.SetBkMode(TRANSPARENT); 
+					CString str1("");
+					ButtonDC.DrawText(str1,&rc,DT_CENTER|DT_VCENTER|DT_SINGLELINE); 
+				} 
+				else
+				{ 
+					bitmapTrans.LoadBitmap(IDB_BITMAP16); 
+					CBitmap *old2 = mem.SelectObject(&bitmapTrans); 
+					bitmapTrans.GetBitmap(&bmp); 
+					CBitmap *old=mem.SelectObject(&bitmapTrans); 
+					ButtonDC.StretchBlt(rc.left,rc.top,rc.right,rc.bottom,&mem,0,0,bmp.bmWidth,bmp.bmHeight,SRCCOPY); 
+					ButtonDC.SetBkMode(TRANSPARENT); 
+					CString str2("");
+					ButtonDC.DrawText(str2,&rc,DT_CENTER|DT_VCENTER|DT_SINGLELINE); 
+					mem.SelectObject(old2); 
+					bitmapTrans.DeleteObject(); 
+					CDialog::OnDrawItem(nIDCtl, lpDrawItemStruct);
+				}
+			}//case 1006结束
+
+			else if(1007==nIDCtl)
+			{
+				CDC ButtonDC; 
+				CBitmap bitmapTrans; 
+				BITMAP bmp; 
+				CDC mem; 
+				CRect rc; 
+				//得到用于绘制按钮的DC 
+				ButtonDC.Attach(lpDrawItemStruct->hDC); 
+				//准备用于向按钮区域传输位图 
+				mem.CreateCompatibleDC(&ButtonDC); 
+				//获取按钮所占的矩形大小 
+				rc=lpDrawItemStruct->rcItem; 
+				//获取按钮目前所处的状态，根据不同的状态绘制不同的按钮 
+				UINT state = lpDrawItemStruct->itemState; 
+				//如果按钮已经得到焦点，绘制选中状态下的按钮 
+				if(state&ODS_FOCUS) 
+				{ 
+					bitmapTrans.LoadBitmap(IDB_BITMAP7); 
+					bitmapTrans.GetBitmap(&bmp); 
+					CBitmap *old=mem.SelectObject(&bitmapTrans); 
+					//向按钮所在位置传输位图 
+					//使用StretcnBlt的目的是为了让位图随按钮的大小而改变 
+					ButtonDC.StretchBlt(rc.left,rc.top,rc.right,rc.bottom,&mem,0,0,bmp.bmWidth,bmp.bmHeight,SRCCOPY); 
+					mem.SelectObject(old); 
+					bitmapTrans.DeleteObject(); 
+					//设置文字背景为透明 
+					ButtonDC.SetBkMode(TRANSPARENT); 
+					CString str1("");
+					ButtonDC.DrawText(str1,&rc,DT_CENTER|DT_VCENTER|DT_SINGLELINE); 
+				} 
+				else
+				{ 
+					bitmapTrans.LoadBitmap(IDB_BITMAP17); 
+					CBitmap *old2 = mem.SelectObject(&bitmapTrans); 
+					bitmapTrans.GetBitmap(&bmp); 
+					CBitmap *old=mem.SelectObject(&bitmapTrans); 
+					ButtonDC.StretchBlt(rc.left,rc.top,rc.right,rc.bottom,&mem,0,0,bmp.bmWidth,bmp.bmHeight,SRCCOPY); 
+					ButtonDC.SetBkMode(TRANSPARENT); 
+					CString str2("");
+					ButtonDC.DrawText(str2,&rc,DT_CENTER|DT_VCENTER|DT_SINGLELINE); 
+					mem.SelectObject(old2); 
+					bitmapTrans.DeleteObject(); 
+					CDialog::OnDrawItem(nIDCtl, lpDrawItemStruct);
+				}
+			}//case 1007结束
+
+	//switch结束
+    /*CDialog::OnDrawItem(nIDCtl, lpDrawItemStruct); */
 }

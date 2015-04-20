@@ -47,4 +47,5 @@ public:
 	afx_msg void DrawPicToHDC(IplImage *img, UINT ID);
 	afx_msg void OnBnClickedWhite();
 	afx_msg void OnBnClickedShark();
+	afx_msg void OnDrawItem(int nIDCtl, LPDRAWITEMSTRUCT lpDrawItemStruct);
 };

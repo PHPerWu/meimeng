@@ -1,20 +1,16 @@
-﻿生成启动时间为 2015-4-20 17:32:05。
-项目“d:\我的文档\visual studio 2010\Projects\meimeng\meimeng\meimeng.vcxproj”在节点 2 上(build 个目标)。
+﻿生成启动时间为 2015-4-20 20:23:28。
+项目“D:\我的文档\Visual Studio 2010\Projects\meimeng\meimeng\meimeng.vcxproj”在节点 2 上(build 个目标)。
 InitializeBuildStatus:
-  正在对“Debug\meimeng.unsuccessfulbuild”执行 Touch 任务。
+  正在创建“Debug\meimeng.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
 ClCompile:
   所有输出均为最新。
-  d:\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\meimeng.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt meimengDlg.cpp
-  meimengDlg.cpp
-d:\opencv\build\include\opencv2\core\mat.hpp(1413): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-d:\opencv\build\include\opencv2\core\mat.hpp(1413): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-d:\我的文档\visual studio 2010\projects\meimeng\meimeng\meimengdlg.cpp(175): warning C4244: “=”: 从“double”转换到“uchar”，可能丢失数据
-ResourceCompile:
   所有输出均为最新。
+ResourceCompile:
+  C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /l"0x0804" /IDebug\ /nologo /fo"Debug\meimeng.res" meimeng.rc 
 ManifestResourceCompile:
   所有输出均为最新。
 Link:
-  d:\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"d:\我的文档\visual studio 2010\Projects\meimeng\Debug\meimeng.exe" /INCREMENTAL /NOLOGO opencv_ts300d.lib opencv_world300d.lib /MANIFEST /ManifestFile:"Debug\meimeng.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"d:\我的文档\visual studio 2010\Projects\meimeng\Debug\meimeng.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"d:\我的文档\visual studio 2010\Projects\meimeng\Debug\meimeng.lib" /MACHINE:X86 Debug\meimeng.res
+  d:\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\我的文档\Visual Studio 2010\Projects\meimeng\Debug\meimeng.exe" /INCREMENTAL /NOLOGO opencv_ts300d.lib opencv_world300d.lib /MANIFEST /ManifestFile:"Debug\meimeng.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\我的文档\Visual Studio 2010\Projects\meimeng\Debug\meimeng.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\我的文档\Visual Studio 2010\Projects\meimeng\Debug\meimeng.lib" /MACHINE:X86 Debug\meimeng.res
   Debug\meimeng.exe.embed.manifest.res
   Debug\CvvImage.obj
   Debug\meimeng.obj
@@ -25,12 +21,12 @@ Manifest:
   所有输出均为最新。
 LinkEmbedManifest:
   所有输出均为最新。
-  meimeng.vcxproj -> d:\我的文档\visual studio 2010\Projects\meimeng\Debug\meimeng.exe
+  meimeng.vcxproj -> D:\我的文档\Visual Studio 2010\Projects\meimeng\Debug\meimeng.exe
 FinalizeBuildStatus:
   正在删除文件“Debug\meimeng.unsuccessfulbuild”。
   正在对“Debug\meimeng.lastbuildstate”执行 Touch 任务。
-已完成生成项目“d:\我的文档\visual studio 2010\Projects\meimeng\meimeng\meimeng.vcxproj”(build 个目标)的操作。
+已完成生成项目“D:\我的文档\Visual Studio 2010\Projects\meimeng\meimeng\meimeng.vcxproj”(build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:03.45
+已用时间 00:00:01.99

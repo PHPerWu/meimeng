@@ -95,8 +95,24 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
+    <None Include="res\bitmap1.bmp" />
+    <None Include="res\bitmap8.bmp" />
     <None Include="res\meimeng.ico" />
     <None Include="res\meimeng.rc2" />
+    <None Include="res\一键美化.bmp" />
+    <None Include="res\一键美化0.bmp" />
+    <None Include="res\伸缩变换.bmp" />
+    <None Include="res\伸缩变换0.bmp" />
+    <None Include="res\保存.bmp" />
+    <None Include="res\保存0.bmp" />
+    <None Include="res\打开.bmp" />
+    <None Include="res\打开0.bmp" />
+    <None Include="res\滤镜.bmp" />
+    <None Include="res\滤镜0.bmp" />
+    <None Include="res\磨皮.bmp" />
+    <None Include="res\磨皮0.bmp" />
+    <None Include="res\美白.bmp" />
+    <None Include="res\美白0.bmp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\opencv\CvvImage.h" />
